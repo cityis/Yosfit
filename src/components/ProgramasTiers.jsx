@@ -209,10 +209,10 @@ const ProgramasTiers = ({ tier }) => {
                     : "transparent",
               }}
             >
-              <span className="px-2 2xl:px-5 text-3xl lg:text-[42px] 2xl:text-[60px] leading-none text-black font-medium programas-group-hover">
+              <span className="px-2 2xl:px-5 text-3xl lg:text-[42px] 2xl:text-[60px] leading-none text-black font-normal programas-group-hover">
                 {programa.name}
               </span>
-              <div className="my-3 h-px w-full md:w-3/5 lg:w-7/11 2xl:w-[66%] bg-black group-hover:bg-zinc-50 programas-group-hover" />
+              <div className="my-3 h-[1.5px] w-full md:w-3/5 lg:w-7/11 2xl:w-[66%] bg-black group-hover:bg-zinc-50 programas-group-hover" />
 
               <p className="md:w-3/5 2xl:w-full px-2 2xl:px-5 text-[14px] md:text-[15px] xl:text-base 2xl:text-lg leading-4 programas-group-hover">
                 {programa.objective}
@@ -259,9 +259,16 @@ const ProgramasTiers = ({ tier }) => {
           />
         )}
         {currentIndex !== null && (
-          <div className="p-2 xl:p-3 2xl:p-4 absolute left-6 bottom-9 xl:left-7 2xl:left-11 2xl:bottom-15 w-[80%] md:text-[12px] xl:text-[14px] 2xl:text-lg text-justify text-white bg-white/10 backdrop-blur-sm border border-white/10 ">
-            {programData[tier][currentIndex].description}
+          <div className="m-10 absolute inset-0 bg-transparent">
+            <div className="h-full flex items-end">
+              <p className="p-2 xl:p-3 2xl:p-4 md:text-[12px] xl:text-[14px] 2xl:text-lg text-justify text-white bg-white/10 backdrop-blur-sm border border-white/10">
+                {programData[tier][currentIndex].description}
+              </p>
+            </div>
           </div>
+          // <div className="p-2 xl:p-3 2xl:p-4 absolute left-6 bottom-9 xl:left-7 2xl:left-11 2xl:bottom-15 w-[80%] md:text-[12px] xl:text-[14px] 2xl:text-lg text-justify text-white bg-white/10 backdrop-blur-sm border border-white/10 ">
+          //   {programData[tier][currentIndex].description}
+          // </div>
         )}
       </div>
     </div>

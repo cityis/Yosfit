@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
 import { socials } from "../constants";
-import { useGSAP } from "@gsap/react";
+
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { Link } from "react-scroll";
 
 const Navbar = () => {
@@ -117,7 +118,7 @@ const Navbar = () => {
       {/* NAV BAR */}
       <nav
         ref={navRef}
-        className="fixed z-50 flex flex-col justify-between w-full h-full | px-10 py-28 uppercase | bg-black text-white/80 gap-y-10 | 2xl:w-1/2 2xl:left-1/2"
+        className="fixed z-50 flex flex-col justify-between w-full h-full | px-10 py-28 uppercase | bg-secundary text-primary/80 gap-y-10 | 2xl:w-1/2 2xl:left-1/2"
       >
         {/* NAV ELEMENTS */}
         <div className="group flex flex-col text-5xl gap-y-2 | md:text-6xl lg:text-8xl">
@@ -145,22 +146,22 @@ const Navbar = () => {
           className="flex flex-col flex-wrap px-10 justify-between gap-8 | md:flex-row"
         >
           <div className="font-light">
-            <p className="tracking-wider text-white/50">E-mail</p>
+            <p className="tracking-wider text-primary/50">E-mail</p>
             <p className="text-xl tracking-widest lowercase text-pretty">
               Yosdiel@gmail.com
             </p>
           </div>
 
           <div className="font-light">
-            <p className="tracking-wider text-white/50">Social Media</p>
+            <p className="tracking-wider text-primary/50">Social Media</p>
             <div className="flex flex-col flex-wrap | md:flex-row gap-x-2">
               {socials.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
-                  className="text-sm leading-loose tracking-widest uppercase cursor-pointer | hover:text-white | transition-colors duration-300"
+                  className="text-sm leading-loose tracking-widest uppercase cursor-pointer | hover:text-primary transition-colors duration-300"
                 >
-                  {"{"} {social.name} {"}"}
+                  {"["} {social.name} {"]"}
                 </a>
               ))}
             </div>
@@ -170,7 +171,7 @@ const Navbar = () => {
 
       {/* BURGER ICON BUTTON */}
       <div
-        className="fixed top-5 right-10 z-50 flex flex-col items-center justify-center gap-1 w-13 h-13 | transition-all duration-300 bg-black rounded-full cursor-pointer | md:w-18 md:h-18 md:top-10"
+        className="fixed top-5 right-10 z-50 flex-center flex-col gap-1 w-13 h-13 | transition-all duration-300 bg-secundary rounded-full cursor-pointer | md:w-18 md:h-18 md:top-10"
         onClick={toggleMenu}
         style={
           showBurger
@@ -180,11 +181,11 @@ const Navbar = () => {
       >
         <span
           ref={topLineRef}
-          className="block w-8 h-0.5 bg-white rounded-full origin-center"
+          className="block w-8 h-0.5 bg-primary rounded-full origin-center"
         ></span>
         <span
           ref={bottomLineRef}
-          className="block w-8 h-0.5 bg-white rounded-full origin-center"
+          className="block w-8 h-0.5 bg-primary rounded-full origin-center"
         ></span>
       </div>
     </>

@@ -12,7 +12,7 @@ const Highlights = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#highlights",
-        start: "top 60%"
+        start: "top 60%",
       },
     });
     tl.from(titleRef.current, {
@@ -35,7 +35,7 @@ const Highlights = () => {
   return (
     <section
       id="highlights"
-      className="w-screen h-full common-padding bg-black"
+      className="w-screen h-full common-padding bg-secundary"
     >
       <div className="w-full screen-max-width">
         <div
@@ -45,16 +45,16 @@ const Highlights = () => {
         >
           <h2
             ref={titleRef}
-            className="highlights-h1-responsive text-white/90 uppercase font-medium text-center tracking-wider"
+            className="highlights-h1-responsive text-primary uppercase font-medium text-center"
           >
-            Experimenta <br />
-            tu transformacion
+            Transforma <br />
+            tu cuerpo
           </h2>
           <p
             ref={subTitleRef}
-            className="self-center text-xl md:text-3xl text-neutral-400 font-light | lg:py-4"
+            className="self-center text-xl md:text-3xl text-primary/60 font-light | lg:py-4"
           >
-            Paso a paso, cumple tus <span className="text-MonoRed">metas</span>
+            Paso a paso, cumple tus <span className="text-MonoRed">metas</span>.
           </p>
         </div>
 

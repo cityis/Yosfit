@@ -30,10 +30,10 @@ const Programas = () => {
         {
           x: "50vh",
           opacity: 0,
-          duration: 1.25,
+          duration: 1.3,
           ease: "circ.out",
         },
-        "<+0.1",
+        "<+0.2",
       )
       .from(
         lineRef.current,
@@ -49,23 +49,20 @@ const Programas = () => {
   return (
     <section
       id="programas"
-      className="w-screen h-full common-padding lg:px-25 overflow-hidden"
+      className="w-screen h-full common-padding overflow-hidden"
     >
       <div className="w-full">
         <div
           // style={{ clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)" }}
-          className="mb-12 lg:mb-15 px-5 w-full flex flex-col items-center justify-center text-center | xl:flex-row xl:justify-between "
+          className="mb-12 lg:mb-15 px-5 w-full flex flex-col items-center justify-center | xl:flex-row xl:justify-between xl:items-center"
         >
-          <h2
-            ref={titleRef}
-            className="programas-h1-responsive text-black uppercase font-medium xl:text-left tracking-normal"
-          >
-            Programas <br />
-            Personalizado
+          <h2 ref={titleRef} className="programas-h1-responsive">
+            Programas
           </h2>
+
           <p
             ref={subTitleRef}
-            className="xl:w-[23%] 2xl:w-[20%] text-base md:text-[21px] lg:text-2xl xl:text-base 2xl:text-[20px] text-neutral-600 font-light xl:text-justify"
+            className="xl:w-[23%] 2xl:w-[22%] xl:pr-5 text-base md:text-[21px] lg:text-2xl xl:text-base 2xl:text-[20px] leading-6.5 text-neutral-600 font-light xl:text-justify"
           >
             Aprende a hacer ejercicio con la{" "}
             <span className="text-MonoRed">forma adecuada</span> en un
@@ -77,8 +74,8 @@ const Programas = () => {
         </div>
 
         {/* LINEA */}
-        <div className="bg-transparent h-px w-full overflow-hidden">
-          <div ref={lineRef} className="bg-black h-px w-full" />
+        <div className="bg-transparent h-0.5 w-full overflow-hidden">
+          <div ref={lineRef} className="bg-black h-full w-full" />
         </div>
 
         {/* PROGRAMAS */}

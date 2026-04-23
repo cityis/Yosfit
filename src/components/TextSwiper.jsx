@@ -61,7 +61,7 @@ const TextSwiper = () => {
         <SwiperSlide key={slide.id}>
           <div
             key={index}
-            className="h-full px-6 py-8 flex justify-start items-center  bg-zinc-900 border border-white/10"
+            className="h-full p-8 flex justify-start items-center  bg-zinc-900 border border-white/10"
           >
             <div className="absolute right-10 -top-5 h-12 w-12 md:h-12 md:w-12 rounded-full text-xl flex justify-center items-center text-white bg-zinc-800  z-10">
               <PiQuotesFill />

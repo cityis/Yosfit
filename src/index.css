@@ -97,10 +97,10 @@
 }
 
 @theme {
-  --color-primary: #e5e5e0;
-  --color-DarkLava: #393632;
-  --color-SageGray: #8b8b73;
-  --color-MonoRed: #ee0000;
+  --color-primary: white;
+  --color-secundary: black;
+  --color-MonoRed: #ec0000;
+  --color-MonoBlue: #2a466b;
   --font-amiamie: "Amiamie", sans-serif;
   --font-amiamie-round: "Amiamie-Round", sans-serif;
 
@@ -117,12 +117,12 @@
 }
 
 body {
-  width: 100dvw;
+  width: 100%;
   height: 100%;
   box-sizing: border-box;
-  background: #e5e5e0;
-  color: black;
-  border-color: #3b3b3b;
+  background: var(--color-primary);
+  color: var(--color-secundary);
+  cursor: crosshair;
   scroll-behavior: smooth;
   overflow-x: hidden;
   font-family: var(--font-amiamie);
@@ -136,6 +136,36 @@ body {
   max-width: 1280px;
 }
 
+/* From Uiverse.io by neerajbaniwal */
+.start-btn {
+  position: relative;
+  padding: 12px 48px;
+  color: white;
+  background: white;
+  /* linear-gradient(to right, white 0, #ee0000 10%, white 15%); */
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 0.75s steps(1) infinite;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 25px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+@keyframes shine {
+  0% {
+    background-color: var(--color-primary);
+  }
+  50% {
+    background-color: var(--color-MonoRed);
+  }
+  100% {
+    background-color: var(--color-primary);
+  }
+}
+
 .swiper-pagination {
   @apply w-auto! bottom-0! left-[50%]! -translate-x-[50%] flex px-4 py-3 lg:py-4;
 }
@@ -145,7 +175,7 @@ body {
 }
 
 .swiper-pagination-bullet {
-  @apply bg-white! h-5! w-5!;
+  @apply bg-primary! h-5! w-5!;
 }
 
 @layer components {
@@ -161,16 +191,24 @@ body {
   @apply px-5 sm:px-10 py-21 sm:py-30;
 }
 
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+
 @utility clip-path {
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 
 @utility banner-h1-responsive {
-  @apply text-[80px] sm:text-[140px] md:text-[160px] lg:text-[190px] 2xl:text-[160px] leading-9 sm:leading-16 lg:leading-20;
+  @apply w-full text-[100px] sm:text-[130px] md:text-[150px] lg:text-[170px] leading-26 sm:leading-32 lg:leading-38 lg:mb-3;
 }
 
 @utility banner-text-responsive {
-  @apply text-lg sm:text-[26px] lg:text-[28px] 2xl:text-[26px] leading-7 sm:leading-9;
+  @apply w-2/3 sm:w-140 flex flex-col sm:flex-row sm:justify-between text-[28px] sm:text-[30px] md:text-[32px];
+}
+
+@utility banner-text-animation {
+  @apply group-hover:opacity-40 hover:opacity-100! hover:text-primary hover:scale-120 transition-all duration-200 ease-in-out;
 }
 
 @utility button-text-responsive {
@@ -185,8 +223,12 @@ body {
   @apply hover:bg-MonoRed/5 hover:border-MonoRed/50 hover:scale-103 transition-all duration-200;
 }
 
+@utility start-hover {
+  @apply group-hover:px-1 transition-all duration-150;
+}
+
 @utility highlights-h1-responsive {
-  @apply text-[32px] md:text-[58px] lg:text-[65px] 2xl:text-[72px] md:leading-15 lg:leading-17;
+  @apply text-[32px] md:text-[58px] lg:text-[65px] 2xl:text-[8em] md:leading-15 lg:leading-32 tracking-[-0.06em];
 }
 
 @utility reviews-p-responsive {
@@ -194,7 +236,7 @@ body {
 }
 
 @utility programas-h1-responsive {
-  @apply text-[45px] sm:text-6xl md:text-7xl lg:text-[100px] xl:text-[85px] 2xl:text-[102px] mb-5 xl:mb-0 leading-10 sm:leading-13 md:leading-15 lg:leading-21 2xl:leading-23;
+  @apply text-[45px] sm:text-6xl md:text-7xl lg:text-[100px] xl:text-[85px] 2xl:text-[11em] mb-5 xl:mb-0 text-black uppercase font-medium tracking-[-0.06em];
 }
 
 @utility programas-group-hover {

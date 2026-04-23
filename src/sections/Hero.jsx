@@ -11,6 +11,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Link } from "react-scroll";
+import Marquee from "react-fast-marquee";
 
 const Hero = () => {
   const contextRef = useRef(null);
@@ -41,83 +42,92 @@ const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative flex flex-col justify-center items-center h-screen min-h-225 w-full | bg-black border-b-3 border-white |  md:min-h-236.70"
+      className="relative flex-center flex-col h-screen min-h-225 w-full | bg-secundary | md:min-h-236.70 overflow-hidden"
     >
       {/* HERO BACKGROUND IMAGE */}
       <img
-        className="absolute top-0 h-full w-full object-cover opacity-50  | 2xl:opacity-80"
-        src={heropc}
-        srcSet={imgSet.map(({ src, width }) => `${src} ${width}w`).join(", ")}
-        sizes="100vw"
-        alt="Hero background image"
+        className="absolute top-0 h-full w-full object-cover opacity-50"
+        src={heromob}
+        // srcSet={imgSet.map(({ src, width }) => `${src} ${width}w`).join(", ")}
+        // sizes="100vw"
+        alt="Hero section background image"
         fetchPriority="high"
         decoding="async"
-        // style={{
-        //   position: "absolute",
-        //   height: "100%",
-        //   width: "100%",
-        //   left: 0,
-        //   top: 0,
-        //   right: 0,
-        //   bottom: 0,
-        //   color: "transparent",
-        //   objectFit: "center",
-        // }}
+        style={{
+          position: "absolute",
+          height: "100%",
+          width: "100%",
+          left: 0,
+          top: 0,
+          right: 0,
+          bottom: 0,
+          color: "transparent",
+          objectFit: "center",
+        }}
       />
 
       {/* HERO H1 AND TEXT */}
-      <div
-        ref={contextRef}
-        className="absolute inset-0 flex grow w-full justify-center items-center | 2xl:grid 2xl:grid-cols-2"
-      >
+      <div ref={contextRef} className="h-full">
         <div
           style={{ clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)" }}
-          className="flex flex-col h-full w-full p-1 justify-center items-center | lg:gap-6 2xl:col-start-2 2xl:justify-self-center 2xl:items-start"
+          className="flex-center flex-col h-full w-full p-10 gap-3"
         >
           {/*H1*/}
-          <div
-            ref={headerRef}
-            className="z-10 flex items-center justify-center"
-          >
-            <div>
-              <a
-                href="inicio"
-                className="block mx-auto banner-h1-responsive text-center font-bold uppercase tracking-widest text-white hover:text-MonoRed transition-all cursor-pointer | lg:tracking-[0.15em] lg:text-left"
-              >
-                Yosfit
-              </a>
-            </div>
+          <div ref={headerRef} className="flex-center">
+            <h1
+              href="inicio"
+              className="mx-auto banner-h1-responsive text-center font-bold uppercase tracking-wide text-primary | hover:tracking-wider hover:text-MonoRed transition-all ease-in-out duration-300"
+            >
+              Body & Mind
+            </h1>
           </div>
 
-          <div className="flex flex-col mt-10 z-10 px-3 text-center justify-center items-center| sm:mt-12">
-            {/*p*/}
-            <AnimatedTextLine
-              text={aboutText}
-              className="font-normal banner-text-responsive text-center tracking-wide text-white/80 | sm:px-2 md:w-175"
-            />
+          {/* ABOUT */}
+          <div className="banner-text-responsive italic tracking-wide text-white/80 group">
+            <p className="banner-text-animation text-left">
+              ENTRENA
+              <span className="text-MonoRed ml-1">.</span>
+            </p>
+            <p className="banner-text-animation text-center">
+              CRECE
+              <span className="text-MonoRed ml-1">.</span>
+            </p>
+            <p className="banner-text-animation text-right">
+              LOGRA
+              <span className="text-MonoRed ml-1">.</span>
+            </p>
+          </div>
 
-            {/*BUTTONS*/}
-            <div className="flex flex-col mt-4 gap-5 w-full justify-between items-center | sm:mt-8 md:mt-10 md:flex-row md:max-w-3xl">
-              {/* <SmashButton /> */}
-              <a href="#" className="group button w-[75%] cursor-pointer">
-                <button className=" w-full font-semibold button-text-responsive uppercase cursor-pointer">
-                  Empieza hoy mismo
-                </button>
+          {/*BUTTON*/}
+          <div className="mt-10 flex justify-center items-center">
+            <Link to="" smooth offset={0} duration={1500}>
+              <a className="group flex items-center gap-2 start-btn uppercase cursor-pointer tracking-wide hover:tracking-[0.032em] hover:bg-MonoRed! transition-all ease-in-out duration-300">
+                <span className="text-[36px] start-hover">{"["}</span>
+                Press to Join the Club
+                <span className="text-[36px] start-hover">{"]"}</span>
               </a>
-              <Link
-                to="programas"
-                smooth
-                offset={0}
-                duration={1500}
-                className="button2 w-[75%] cursor-pointer"
-              >
-                <button className="font-semibold button-text-responsive uppercase w-full cursor-pointer">
-                  Workouts
-                </button>
-              </Link>
-            </div>
+            </Link>
           </div>
         </div>
+      </div>
+
+      {/* MARQUEE */}
+      <div className="absolute bottom-0 w-screen z-30 overflow-hidden ">
+        <div className="bg-primary py-3 flex">
+          <Marquee autoFill speed={30} direction="right">
+            <div className="flex items-center gap-3 mx-3 text-[16px] font-black">
+              <span className="text-MonoRed text-[20px]">本文</span>
+              <p className="tracking-widest">YOSFIT</p>
+            </div>
+          </Marquee>
+        </div>
+      </div>
+
+      {/* LOGO */}
+      <div className="absolute top-5 left-10 z-10 md:top-10 overflow-hidden | w-13 h-13 md:w-18 md:h-18 | flex-center rounded-full | bg-secundary border border-primary/10 | cursor-pointer hover:scale-115 transition-all duration-150">
+        <a href="inicio" className="h-full w-full text-[7em] font-medium leading-23 text-primary">
+          Y
+        </a>
       </div>
     </section>
   );

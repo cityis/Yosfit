@@ -45,7 +45,7 @@ const Reviews = () => {
         >
           <h1
             ref={titleRef}
-            className="highlights-h1-responsive text-white/90 uppercase font-medium text-center tracking-wider"
+            className="highlights-h1-responsive text-white/90 uppercase font-medium text-center"
           >
             Clientes <br />
             satisfechos
@@ -55,7 +55,7 @@ const Reviews = () => {
             className="self-center text-xl md:text-3xl text-neutral-400 font-light text-center | lg:py-4"
           >
             Experiencias <span className="text-MonoRed">reales</span>, sueños
-            hechos realidad
+            hechos realidad.
           </p>
         </div>
       </div>
