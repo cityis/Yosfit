@@ -200,11 +200,11 @@ body {
 }
 
 @utility banner-h1-responsive {
-  @apply w-full text-[100px] sm:text-[130px] md:text-[150px] lg:text-[170px] leading-26 sm:leading-32 lg:leading-38 lg:mb-3;
+  @apply w-full text-[100px] sm:text-[130px] md:text-[150px] lg:text-[170px] leading-22 sm:leading-32 lg:leading-38 mb-3;
 }
 
 @utility banner-text-responsive {
-  @apply w-2/3 sm:w-140 flex flex-col sm:flex-row sm:justify-between text-[28px] sm:text-[30px] md:text-[32px];
+  @apply w-2/3 sm:w-140 flex flex-col sm:flex-row sm:justify-between text-[26px] sm:text-[30px] md:text-[32px];
 }
 
 @utility banner-text-animation {
@@ -228,19 +228,11 @@ body {
 }
 
 @utility highlights-h1-responsive {
-  @apply text-[32px] md:text-[58px] lg:text-[65px] 2xl:text-[8em] md:leading-15 lg:leading-32 tracking-[-0.06em];
+  @apply text-[55px] sm:text-[75px] md:text-[95px] lg:text-[125px] 2xl:text-[8em] leading-14 sm:leading-16 md:leading-20 lg:leading-28 2xl:leading-32;
 }
 
 @utility reviews-p-responsive {
   @apply text-sm sm:text-[16px] md:text-lg lg:text-[19px] leading-relaxed;
-}
-
-@utility programas-h1-responsive {
-  @apply text-[45px] sm:text-6xl md:text-7xl lg:text-[100px] xl:text-[85px] 2xl:text-[11em] mb-5 xl:mb-0 text-black uppercase font-medium tracking-[-0.06em];
-}
-
-@utility programas-group-hover {
-  @apply md:group-hover:px-2 2xl:group-hover:px-10 md:group-hover:text-zinc-50 transition-all duration-250;
 }
 
 @utility imgCarousel-container {
@@ -249,4 +241,12 @@ body {
 
 @utility textCarousel-container {
   @apply relative h-[35vh] sm:h-[35vh] w-full sm:w-3/4 lg:w-3/5 xl:w-1/2;
+}
+
+@utility programas-h1-responsive {
+  @apply text-[45px] sm:text-6xl md:text-7xl lg:text-[100px] xl:text-[85px] 2xl:text-[11em] mb-5 xl:mb-0 text-black uppercase font-medium tracking-[-0.06em];
+}
+
+@utility programas-group-hover {
+  @apply md:group-hover:px-2 2xl:group-hover:px-10 md:group-hover:text-zinc-50 transition-all duration-250;
 }

@@ -103,7 +103,7 @@ const Hero = () => {
             <Link to="" smooth offset={0} duration={1500}>
               <a className="group flex items-center gap-2 start-btn uppercase cursor-pointer tracking-wide hover:tracking-[0.032em] hover:bg-MonoRed! transition-all ease-in-out duration-300">
                 <span className="text-[36px] start-hover">{"["}</span>
-                Press to Join the Club
+                Presiona para empezar
                 <span className="text-[36px] start-hover">{"]"}</span>
               </a>
             </Link>

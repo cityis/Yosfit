@@ -61,9 +61,9 @@ const TextSwiper = () => {
         <SwiperSlide key={slide.id}>
           <div
             key={index}
-            className="h-full p-8 flex justify-start items-center  bg-zinc-900 border border-white/10"
+            className="h-full p-8 flex-center bg-primary/10 border border-white/5"
           >
-            <div className="absolute right-10 -top-5 h-12 w-12 md:h-12 md:w-12 rounded-full text-xl flex justify-center items-center text-white bg-zinc-800  z-10">
+            <div className="absolute right-10 -top-5 h-12 w-12 md:h-12 md:w-12 rounded-full text-xl flex-center text-primary bg-primary/10 z-10">
               <PiQuotesFill />
             </div>
             <div key={index} className="h-full flex flex-col gap-5">
@@ -74,10 +74,10 @@ const TextSwiper = () => {
               </div>
 
               <div className="h-full flex flex-col gap-3 justify-between!">
-                <p className="reviews-p-responsive font-light text-justify text-neutral-300/90">
+                <p className="reviews-p-responsive font-light text-justify text-primary/80">
                   {slide.text}
                 </p>
-                <span className="reviews-p-responsive font-semibold text-neutral-200">
+                <span className="reviews-p-responsive font-semibold text-primary/90">
                   {slide.user}
                 </span>
               </div>

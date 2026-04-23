@@ -42,21 +42,21 @@ const ImageSwiper = () => {
         clickable: true,
       }}
       autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
-      //   onSlideChange={() => console.log("slide change")}
-      //   onSwiper={(swiper) => console.log(swiper)}
     >
       {imgSlides.map((slide, index) => (
         <SwiperSlide key={slide.id}>
           <img
-            className="imgCarousel-container  bg-zinc-900 border border-white/5 object-cover"
+            className="imgCarousel-container bg-primary/10 border border-primary/5 object-cover"
             src={slide.image}
             alt={`Slide ${index + 1}`}
             loading="lazy"
             decoding="async"
           />
-          <p className="mt-3 xl:mt-6 px-2 w-full md:w-4/5 text-sm sm:text-[15px] md:text-lg xl:text-xl text-neutral-400 font-light leading-relaxed">
-            {slide.text}
-          </p>
+          <div className="flex-center">
+            <p className="mt-3 xl:mt-6 px-2 w-full text-sm sm:text-[15px] md:text-lg xl:text-xl text-primary/60 text-center font-light leading-relaxed">
+              {slide.text}
+            </p>
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>

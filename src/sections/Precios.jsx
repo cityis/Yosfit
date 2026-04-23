@@ -5,11 +5,7 @@ const Precios = () => {
     <section
       id="coaching"
       className="w-screen h-full common-padding overflow-hidden"
-    >
-      <div className="uppercase text-7xl text-center text-MonoBlue">
-        i love you ada
-      </div>
-    </section>
+    ></section>
   );
 };
 
