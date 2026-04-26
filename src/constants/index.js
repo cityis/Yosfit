@@ -69,10 +69,13 @@ export const textSlides = [
 
 export const programas = [
   {
-    principiante: [
+    id: 1,
+    name: "Principiante",
+    nameJap: "初心者",
+    programs: [
       {
         id: 1,
-        name: "Principiante Forjador",
+        name: "Primeros Pasos",
         objective: "Adaptación neuromuscular y ganancia de fuerza base.",
         description:
           "Enfocado en dominar los 6 movimientos fundamentales (sentadilla, press banca, peso muerto, dominada, press militar y remo) con progresiones sencillas y bajo volumen para evitar lesiones.",
@@ -80,7 +83,7 @@ export const programas = [
       },
       {
         id: 2,
-        name: "Base Hipertrófica",
+        name: "Hipertrofia",
         objective: "Estimular la hipertrofia general en todo el cuerpo.",
         description:
           "Rutina full body 3 días/semana. Cada sesión trabaja todos los grupos musculares con ejercicios compuestos, ideal para principiantes que quieren ver los primeros cambios de tamaño muscular.",
@@ -88,17 +91,22 @@ export const programas = [
       },
       {
         id: 3,
-        name: "Simetría y Postura",
+        name: "Simetria",
         objective: "Corregir desbalances musculares y mejorar la postura.",
         description:
           "Programa especial para quienes pasan muchas horas sentados. Incluye trabajo extra para espalda alta, glúteos y rotadores externos, reduciendo el riesgo de hombros redondeados.",
         image: "/images/programs/programs3.jpg",
       },
     ],
-    intermedio: [
+  },
+  {
+    id: 2,
+    name: "Intermedio",
+    nameJap: "中級",
+    programs: [
       {
         id: 4,
-        name: "Clásico de Espalda en V",
+        name: "Espalda en V",
         objective:
           "Ensanchar la espalda superior para lograr la clásica forma de V.",
         description:
@@ -107,7 +115,7 @@ export const programas = [
       },
       {
         id: 5,
-        name: "Tren Inferior de Poder",
+        name: "Tren Inferior",
         objective: "Desarrollar piernas densas y glúteos prominentes.",
         description:
           "Basado en sentadilla profunda, peso muerto rumano, prensa y bulgaras. Se usan series de 6-10 repes con sobrecarga progresiva semanal. 2 sesiones de piernas.",
@@ -115,7 +123,7 @@ export const programas = [
       },
       {
         id: 6,
-        name: "Volumen Intensivo",
+        name: "Volumen",
         objective: "Aumentar la masa muscular total mediante alto volumen.",
         description:
           "Clásica división PPL 5-6 días/semana. Cada grupo se golpea 2 veces. Ideal para romper estancamientos de peso y ganar tamaño sin descuidar la intensidad.",
@@ -123,7 +131,7 @@ export const programas = [
       },
       {
         id: 7,
-        name: "Fuerza e Hipertrofia Mixta",
+        name: "Fuerza",
         objective:
           "Combinar ganancias de fuerza absoluta con trabajo hipertrófico.",
         description:
@@ -139,10 +147,15 @@ export const programas = [
         image: "/images/programs/programs8.jpg",
       },
     ],
-    avanzado: [
+  },
+  {
+    id: 3,
+    name: "Avanzado",
+    nameJap: "上級",
+    programs: [
       {
         id: 9,
-        name: "Definición y Vascularidad",
+        name: "Definicion",
         objective:
           "Alcanzar el máximo nivel de definición muscular con mínimo sacrificio de masa.",
         description:
@@ -151,7 +164,7 @@ export const programas = [
       },
       {
         id: 10,
-        name: "Especialización en Brazos",
+        name: "Brazos",
         objective: "Añadir centímetros a bíceps y tríceps en 8 semanas.",
         description:
           "Para avanzados con brazos rezagados. Superseries antagonistas, series descendentes y técnicas de alta intensidad como parciales, isométricos y dropsets. Volumen muy alto.",
@@ -167,7 +180,7 @@ export const programas = [
       },
       {
         id: 12,
-        name: "Fuerza Máxima",
+        name: "Fuerza Maxima",
         objective:
           "Aumentar el 1RM en sentadilla, banca y peso muerto, mientras se preserva el músculo.",
         description:
@@ -177,6 +190,117 @@ export const programas = [
     ],
   },
 ];
+
+// export const programas = [
+//   {
+//     principiante: [
+//       {
+//         id: 1,
+//         name: "Primeros Pasos",
+//         objective: "Adaptación neuromuscular y ganancia de fuerza base.",
+//         description:
+//           "Enfocado en dominar los 6 movimientos fundamentales (sentadilla, press banca, peso muerto, dominada, press militar y remo) con progresiones sencillas y bajo volumen para evitar lesiones.",
+//         image: "/images/programs/programs1.jpg",
+//       },
+//       {
+//         id: 2,
+//         name: "Hipertrofia",
+//         objective: "Estimular la hipertrofia general en todo el cuerpo.",
+//         description:
+//           "Rutina full body 3 días/semana. Cada sesión trabaja todos los grupos musculares con ejercicios compuestos, ideal para principiantes que quieren ver los primeros cambios de tamaño muscular.",
+//         image: "/images/programs/programs2.jpg",
+//       },
+//       {
+//         id: 3,
+//         name: "Simetria",
+//         objective: "Corregir desbalances musculares y mejorar la postura.",
+//         description:
+//           "Programa especial para quienes pasan muchas horas sentados. Incluye trabajo extra para espalda alta, glúteos y rotadores externos, reduciendo el riesgo de hombros redondeados.",
+//         image: "/images/programs/programs3.jpg",
+//       },
+//     ],
+//     intermedio: [
+//       {
+//         id: 4,
+//         name: "Espalda en V",
+//         objective:
+//           "Ensanchar la espalda superior para lograr la clásica forma de V.",
+//         description:
+//           "Prioriza dominadas, jalones al pecho y remos con agarre ancho. Volumen moderado-alto con 2 días específicos de espalda a la semana.",
+//         image: "/images/programs/programs4.jpg",
+//       },
+//       {
+//         id: 5,
+//         name: "Tren Inferior",
+//         objective: "Desarrollar piernas densas y glúteos prominentes.",
+//         description:
+//           "Basado en sentadilla profunda, peso muerto rumano, prensa y bulgaras. Se usan series de 6-10 repes con sobrecarga progresiva semanal. 2 sesiones de piernas.",
+//         image: "/images/programs/programs5.jpg",
+//       },
+//       {
+//         id: 6,
+//         name: "Volumen",
+//         objective: "Aumentar la masa muscular total mediante alto volumen.",
+//         description:
+//           "Clásica división PPL 5-6 días/semana. Cada grupo se golpea 2 veces. Ideal para romper estancamientos de peso y ganar tamaño sin descuidar la intensidad.",
+//         image: "/images/programs/programs6.jpg",
+//       },
+//       {
+//         id: 7,
+//         name: "Fuerza",
+//         objective:
+//           "Combinar ganancias de fuerza absoluta con trabajo hipertrófico.",
+//         description:
+//           "4 días: 2 días pesados (3-5 repes) y 2 días de hipertrofia (8-12 repes). Perfecto para el intermedio que quiere seguir subiendo el 1RM pero sin perder el foco estético.",
+//         image: "/images/programs/programs7.jpg",
+//       },
+//       {
+//         id: 8,
+//         name: "Hombros 3D",
+//         objective: "Desarrollar hombros redondeados y separación de deltoides.",
+//         description:
+//           "Rutina con énfasis en deltoides lateral y posterior (a menudo olvidados). Incluye elevaciones laterales, face pulls, press Arnold y mucho volumen para el deltoides lateral.",
+//         image: "/images/programs/programs8.jpg",
+//       },
+//     ],
+//     avanzado: [
+//       {
+//         id: 9,
+//         name: "Definicion",
+//         objective:
+//           "Alcanzar el máximo nivel de definición muscular con mínimo sacrificio de masa.",
+//         description:
+//           "Programa de 6 semanas con carbohidratos cíclicos y series de alto rango metabólico (12-15 repes). Incluye trabajo de pump y técnicas como rest-pause. Para competidores próximos a mostrar forma.",
+//         image: "/images/programs/programs9.jpg",
+//       },
+//       {
+//         id: 10,
+//         name: "Brazos",
+//         objective: "Añadir centímetros a bíceps y tríceps en 8 semanas.",
+//         description:
+//           "Para avanzados con brazos rezagados. Superseries antagonistas, series descendentes y técnicas de alta intensidad como parciales, isométricos y dropsets. Volumen muy alto.",
+//         image: "/images/programs/programs10.jpg",
+//       },
+//       {
+//         id: 11,
+//         name: "Madurez Muscular",
+//         objective: "Mejorar la calidad, dureza y separación muscular.",
+//         description:
+//           "Cada grupo termina con 7 series de 15 repes con descansos muy cortos (30-45”). Enfocado en la fascia. Avanzados solo, porque requiere manejo extremo de fatiga y bombeo.",
+//         image: "/images/programs/programs11.jpg",
+//       },
+//       {
+//         id: 12,
+//         name: "Fuerza Maxima",
+//         objective:
+//           "Aumentar el 1RM en sentadilla, banca y peso muerto, mientras se preserva el músculo.",
+//         description:
+//           "Ciclos de 4 semanas (acumulación, intensificación, choque, descarga). Los levantamientos compuestos se trabajan al 85-95%, y los accesorios se mantienen en rango hipertrófico. Para avanzados con buena técnica.",
+//         image: "/images/programs/programs12.jpg",
+//       },
+//     ],
+//   },
+// ];
 
 export const projects = [
   {

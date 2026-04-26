@@ -63,13 +63,13 @@ const TextSwiper = () => {
             key={index}
             className="h-full p-8 flex-center bg-primary/10 border border-white/5"
           >
-            <div className="absolute right-10 -top-5 h-12 w-12 md:h-12 md:w-12 rounded-full text-xl flex-center text-primary bg-primary/10 z-10">
+            <div className="absolute right-10 -top-5 h-12 w-12 md:h-12 md:w-12 rounded-full text-xl flex-center text-primary bg-zinc-800 z-10">
               <PiQuotesFill />
             </div>
             <div key={index} className="h-full flex flex-col gap-5">
               <div className="flex items-center gap-1">
                 {Array.from({ length: slide.rating }, (_, i) => (
-                  <FaStar className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  <FaStar key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                 ))}
               </div>
 

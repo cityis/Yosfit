@@ -1,6 +1,5 @@
 import { heropc, heromob } from "../constants/index";
 import AnimatedTextLine from "../components/AnimatedTextLine";
-import SmashButton from "../components/SmashButton";
 
 const imgSet = [
   { src: heromob, width: 1280 },
@@ -100,12 +99,12 @@ const Hero = () => {
 
           {/*BUTTON*/}
           <div className="mt-10 flex justify-center items-center">
-            <Link to="" smooth offset={0} duration={1500}>
-              <a className="group flex items-center gap-2 start-btn uppercase cursor-pointer tracking-wide hover:tracking-[0.032em] hover:bg-MonoRed! transition-all ease-in-out duration-300">
+            <Link to="coaching" smooth offset={0} duration={1500}>
+              <div className="group flex items-center gap-2 start-btn uppercase cursor-pointer tracking-wide hover:tracking-[0.032em] hover:bg-MonoRed! transition-all ease-in-out duration-300">
                 <span className="text-[36px] start-hover">{"["}</span>
                 Presiona para empezar
                 <span className="text-[36px] start-hover">{"]"}</span>
-              </a>
+              </div>
             </Link>
           </div>
         </div>
@@ -125,7 +124,10 @@ const Hero = () => {
 
       {/* LOGO */}
       <div className="absolute top-5 left-10 z-10 md:top-10 overflow-hidden | w-13 h-13 md:w-18 md:h-18 | flex-center rounded-full | bg-secundary border border-primary/10 | cursor-pointer hover:scale-115 transition-all duration-150">
-        <a href="inicio" className="h-full w-full text-[7em] font-medium leading-23 text-primary">
+        <a
+          href="inicio"
+          className="h-full w-full text-[7em] font-medium leading-23 text-primary"
+        >
           Y
         </a>
       </div>

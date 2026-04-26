@@ -4,29 +4,27 @@ import { useState, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const ProgramasTiers = ({ tier }) => {
-  const programData = programas[0];
-
+const ProgramasTiers = ({ scrollTrig }) => {
   const containerRef = useRef([]);
   const previewRef = useRef(null);
   const overlayRefs = useRef([]);
   const imageRefs = useRef([]);
-  const [currentIndex, setcurrentIndex] = useState(null);
+  const [currentProgram, setCurrentProgram] = useState(null);
   const [expandIndex, setExpandIndex] = useState(null);
 
   useGSAP(() => {
     gsap.from(containerRef.current, {
-      y: 100,
+      x: -100,
       opacity: 0,
       delay: 0.2,
-      duration: 3,
-      stagger: 0.3,
+      duration: 2,
+      stagger: 0.1,
       ease: "back.out",
       scrollTrigger: {
-        trigger: "#container",
+        trigger: scrollTrig,
       },
     });
-  }, [tier, programData]);
+  }, []);
 
   // MOB IMAGE DRAWER
   const handleContainerClick = (index) => {
@@ -86,9 +84,9 @@ const ProgramasTiers = ({ tier }) => {
 
   // DESKTOP IMAGE HOVER
 
-  const handleMouseEnter = (index) => {
+  const handleMouseEnter = (program, event, index) => {
     if (window.innerWidth < 768) return;
-    setcurrentIndex(index);
+    setCurrentProgram(program);
 
     const el = overlayRefs.current[index];
     if (!el) return;
@@ -106,42 +104,47 @@ const ProgramasTiers = ({ tier }) => {
       },
     );
 
-    let itemHeight = 35;
-    if (window.innerWidth < 1536) {
-      itemHeight = 70;
-    }
-
-    let yOffset = index * itemHeight;
-
-    // Get container and preview dimensions
-    const container = previewRef.current?.parentElement;
-    const previewHeight = previewRef.current?.offsetHeight || 600;
-
-    if (container) {
-      const containerRect = container.getBoundingClientRect();
-      const maxAllowedY = containerRect.height - previewHeight;
-
-      // If the image would go out of bounds, adjust it
-      if (yOffset > maxAllowedY) {
-        yOffset = maxAllowedY;
-      }
-
-      // Optional: Add a small offset from bottom if needed
-      if (yOffset < 0) yOffset = 0;
-    }
-
-    gsap.to(previewRef.current, {
-      y: yOffset,
-      opacity: 1,
-      scale: 1,
-      duration: 0.3,
-      ease: "power2.out",
-    });
+    // Get the actual position of the hovered element
+  const hoveredElement = event.currentTarget;
+  const hoveredRect = hoveredElement.getBoundingClientRect();
+  const containerRect = containerRef.current[0]?.parentElement?.getBoundingClientRect();
+  
+  // Get preview dimensions
+  const previewHeight = previewRef.current?.offsetHeight || 400;
+  
+  // Calculate desired Y position (align with the hovered element)
+  let targetY = hoveredRect.top - (containerRect?.top || 0);
+  
+  // Adjust so the preview is centered vertically relative to the hovered element
+  const hoveredHeight = hoveredRect.height;
+  targetY = targetY + (hoveredHeight / 2) - (previewHeight / 2);
+  
+  // Get container height for bounds checking
+  const containerHeight = containerRect?.height || 0;
+  
+  // Bound checks - prevent going out of container
+  if (targetY < 0) {
+    targetY = 0;
+  }
+  
+  const maxY = containerHeight - previewHeight;
+  if (targetY > maxY) {
+    targetY = maxY;
+  }
+  
+  // Animate to the calculated position
+  gsap.to(previewRef.current, {
+    y: targetY,
+    opacity: 1,
+    scale: 1,
+    duration: 0.3,
+    ease: "power2.out",
+  });
   };
 
   const handleMouseLeave = (index) => {
     if (window.innerWidth < 768) return;
-    setcurrentIndex(null);
+    setCurrentProgram(null);
 
     const el = overlayRefs.current[index];
     if (!el) return;
@@ -163,112 +166,105 @@ const ProgramasTiers = ({ tier }) => {
     });
   };
 
-  const tierDisplayNames = {
-    principiante: { name: "Principiante", nameJap: "初心者" },
-    intermedio: { name: "Intermedio", nameJap: "中級" },
-    avanzado: { name: "Avanzado", nameJap: "上級" },
-  };
-
-  const currentTier = tierDisplayNames[tier] || { name: tier, nameJap: "" };
-
   return (
     <div id="container" className="mt-12 relative flex flex-col font-light">
       {/* TIER */}
-      <div>
-        <div className="flex justify-center gap-2 md:justify-start">
-          <h3 className="ml-10 mb-3 text-lg lg:text-2xl font-light italic uppercase">
-            {currentTier.name}
-          </h3>
-          <span className="text-xs text-MonoRed">{currentTier.nameJap}</span>
-        </div>
+      {programas.map((tier) => (
+        <div key={tier.id}>
+          {/* TIER NAME */}
+          <div className="flex-center gap-2 md:justify-start">
+            <h3 className="md:ml-1 my-3 text-lg lg:text-2xl font-light italic uppercase">
+              {tier.name}
+            </h3>
+            <span className="text-xs text-MonoRed">{tier.nameJap}</span>
+          </div>
 
-        {programData[tier].map((programa, index) => (
-          <div
-            key={programa.id}
-            ref={(el) => (containerRef.current[index] = el)}
-            className="relative flex flex-col cursor-pointer"
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(index)}
-            onClick={() => handleContainerClick(index)}
-          >
-            {/* FONDO */}
-
+          {tier.programs.map((program) => (
             <div
-              ref={(el) => {
-                overlayRefs.current[index] = el;
-              }}
-              className="absolute md:w-3/5 lg:w-7/11 2xl:w-[66%] inset-0 hidden md:block duration-200 bg-MonoRed -z-10 clip-path"
-            />
-            {/* CONTENT */}
-            <div
-              className="group py-5"
-              style={{
-                backgroundColor:
-                  window.innerWidth < 768 && expandIndex === index
-                    ? "#ee0000"
-                    : "transparent",
-              }}
+              key={program.id}
+              ref={(el) => (containerRef.current[program.id] = el)}
+              className="relative flex justify-center flex-col cursor-pointer"
+              onMouseEnter={(e) => handleMouseEnter(program, e, program.id)}
+              onMouseLeave={() => handleMouseLeave(program.id)}
+              onClick={() => handleContainerClick(program.id)}
             >
-              <span className="px-2 2xl:px-5 text-3xl lg:text-[42px] 2xl:text-[60px] leading-none text-black font-normal programas-group-hover">
-                {programa.name}
-              </span>
-              <div className="my-3 h-[1.5px] w-full md:w-3/5 lg:w-7/11 2xl:w-[66%] bg-black group-hover:bg-zinc-50 programas-group-hover" />
-
-              <p className="md:w-3/5 2xl:w-full px-2 2xl:px-5 text-[14px] md:text-[15px] xl:text-base 2xl:text-lg leading-4 programas-group-hover">
-                {programa.objective}
-              </p>
-            </div>
-
-            {/* IMAGE */}
-            <div
-              ref={(el) => (imageRefs.current[index] = el)}
-              className="relative overflow-hidden justify-center items-center md:hidden"
-              style={{
-                height: 0,
-                opacity: 0,
-                display: "none",
-              }}
-            >
-              <img
-                src={programa.image}
-                alt={`${programData.name}-image`}
-                className="w-full h-full object-cover brightness-60"
-                loading="lazy"
-                decoding="async"
+              {/* FONDO */}
+              <div
+                ref={(el) => {
+                  overlayRefs.current[program.id] = el;
+                }}
+                className="absolute hidden md:block inset-0 w-full bg-MonoRed -z-10 clip-path duration-200"
               />
-              <div className="p-3 absolute bottom-10 w-[80%] text-sm text-justify text-white/90 bg-white/10 backdrop-blur-xs border border-white/10">
-                {programa.description}
+
+              <div
+                className="group my-3"
+                style={{
+                  backgroundColor:
+                    window.innerWidth < 768 && expandIndex === program.id
+                      ? "#ec0000"
+                      : "transparent",
+                }}
+              >
+                <div className="h-full">
+                  {/* NOMBRE */}
+                  <span className="text-3xl lg:text-[42px] 2xl:text-[75px] font-normal uppercase tracking-tighter programas-group-hover">
+                    {program.name}
+                  </span>
+                  {/* LINEA */}
+                  <div className="h-0.5 w-full bg-secundary group-hover:bg-primary duration-200" />
+                  {/* OBJETIVO */}
+                  <p className="mt-1 text-[14px] md:text-[15px] xl:text-base 2xl:text-lg text-secundary/75 programas-group-hover">
+                    {program.objective}
+                  </p>
+                  {/* IMAGEN MOB */}
+                  <div
+                    ref={(el) => (imageRefs.current[program.id] = el)}
+                    className="relative overflow-hidden justify-center items-center md:hidden"
+                    style={{
+                      height: 0,
+                      opacity: 0,
+                      display: "none",
+                    }}
+                  >
+                    <img
+                      src={program.image}
+                      alt={`${program.name}-image`}
+                      className="w-full h-full object-cover brightness-60"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="p-3 absolute bottom-10 w-[80%] text-sm text-justify text-white/90 bg-white/10 backdrop-blur-xs border border-white/10">
+                      {program.description}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* DESKTOP FLOATING CARD */}
+          ))}
+        </div>
+      ))}
+      {/* IMAGEN DESKTOP */}
       <div
         ref={previewRef}
         className="absolute md:right-3 xl:right-8 2xl:right-10 overflow-hidden pointer-events-none shadow-3xl md:h-80 md:w-60 lg:h-90 lg:w-68 xl:h-100 xl:w-75 2xl:h-150 2xl:w-md opacity-0 hidden md:block"
       >
-        {currentIndex !== null && (
+        {currentProgram !== null && (
           <img
-            src={programData[tier][currentIndex].image}
+            src={currentProgram.image}
             alt="Preview"
             className="object-cover w-full h-full brightness-80"
             loading="lazy"
             decoding="async"
           />
         )}
-        {currentIndex !== null && (
+        {currentProgram !== null && (
           <div className="m-10 absolute inset-0 bg-transparent">
             <div className="h-full flex items-end">
-              <p className="p-2 xl:p-3 2xl:p-4 md:text-[12px] xl:text-[14px] 2xl:text-lg text-justify text-white bg-white/10 backdrop-blur-sm border border-white/10">
-                {programData[tier][currentIndex].description}
+              <p className="p-2 xl:p-3 2xl:p-4 md:text-[12px] xl:text-[14px] 2xl:text-lg text-justify text-primary bg-primary/10 backdrop-blur-sm border border-primary/10">
+                {currentProgram.description}
               </p>
             </div>
           </div>
-          // <div className="p-2 xl:p-3 2xl:p-4 absolute left-6 bottom-9 xl:left-7 2xl:left-11 2xl:bottom-15 w-[80%] md:text-[12px] xl:text-[14px] 2xl:text-lg text-justify text-white bg-white/10 backdrop-blur-sm border border-white/10 ">
-          //   {programData[tier][currentIndex].description}
-          // </div>
         )}
       </div>
     </div>

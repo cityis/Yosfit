@@ -39,7 +39,7 @@ export const VerticalHeader = ({ scrollTrig, h2Text, pText, spanText }) => {
     >
       <h2
         ref={titleRef}
-        className="highlights-h1-responsive text-primary text-center font-medium uppercase  tracking-tighter "
+        className="highlights-h1-responsive text-primary text-center font-medium uppercase tracking-tighter "
       >
         {h2Text}
       </h2>

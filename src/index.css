@@ -150,7 +150,7 @@ body {
   animation-fill-mode: forwards;
   -webkit-text-size-adjust: none;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 24px;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -244,9 +244,9 @@ body {
 }
 
 @utility programas-h1-responsive {
-  @apply text-[45px] sm:text-6xl md:text-7xl lg:text-[100px] xl:text-[85px] 2xl:text-[11em] mb-5 xl:mb-0 text-black uppercase font-medium tracking-[-0.06em];
+  @apply mb-12 md:mb-15 lg:mb-18 xl:mb-0 text-[65px] sm:text-[85px] md:text-[105px] lg:text-[125px] xl:text-[105px] 2xl:text-[11em] leading-0 text-secundary uppercase font-medium;
 }
 
 @utility programas-group-hover {
-  @apply md:group-hover:px-2 2xl:group-hover:px-10 md:group-hover:text-zinc-50 transition-all duration-250;
+  @apply md:group-hover:px-2 2xl:group-hover:px-8 md:group-hover:text-primary transition-all duration-250;
 }
