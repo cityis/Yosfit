@@ -12,13 +12,10 @@ const Sub = () => {
       id="sub"
       className="mt-30 w-screen min-h-screen common-padding flex-center text-primary bg-secundary overflow-hidden sub-bg"
     >
-      <div className="h-full flex-center flex-col ">
-        <VerticalHeader
-          h2Text={textHeader}
-          pHidden={true}
-          black={false}
-          big={true}
-        />
+      <div className="h-full flex-center flex-col gap-12">
+        <h2 className="z-50 header-big-h1-responsive text-primary text-center font-bold italic uppercase tracking-wide">
+          ¡Empieza hoy!
+        </h2>
 
         <div className="p-4 bg-secundary/10 backdrop-blur-[2px]">
           <ContactForm />

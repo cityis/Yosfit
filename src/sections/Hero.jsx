@@ -129,12 +129,12 @@ const Hero = () => {
       </div>
 
       {/* LOGO */}
-      <div className="absolute top-5 left-10 z-10 md:top-10 overflow-hidden | w-13 h-13 md:w-18 md:h-18 | flex-center rounded-full | bg-secundary border border-primary/10 | cursor-pointer hover:scale-115 transition-all duration-150">
+      <div className="absolute top-5 left-10 z-10 md:top-10 flex-center text-primary/80 hover:text-MonoRed cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out">
         <a
           href="inicio"
-          className="h-full w-full text-[7em] font-medium leading-23 text-primary"
+          className="h-full w-full text-[3em] font-bold italic tracking-wide uppercase"
         >
-          Y
+          YosFit
         </a>
       </div>
     </section>
