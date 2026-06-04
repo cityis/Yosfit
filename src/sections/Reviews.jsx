@@ -7,13 +7,13 @@ import { useGSAP } from "@gsap/react";
 
 const Reviews = () => {
   const textHeader = "Clientes satisfechos";
-  const textPara = "Experienciasy sueños hechos";
+  const textPara = "Experiencias y sueños hechos";
   const textRed = "realidad";
 
   return (
     <section
       id="reviews"
-      className="w-screen h-full common-padding pt-0 overflow-hidden bg-secundary"
+      className="w-screen h-full common-padding pt-0 sm:px-50 overflow-hidden bg-secundary"
     >
       <div className="w-full screen-max-width">
         <VerticalHeader

@@ -17,14 +17,14 @@ const ImageSwiper = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: swiperRef.current,
-        start: "top bottom",
+        start: "top 80%",
       },
     });
     tl.from(swiperRef.current, {
-      y: "50vh",
+      // y: "50vh",
       opacity: 0,
       scale: 0.9,
-      duration: 1.2,
+      duration: 0.6,
       ease: "circ.out",
     });
   }, []);
@@ -46,7 +46,7 @@ const ImageSwiper = () => {
       {imgSlides.map((slide, index) => (
         <SwiperSlide key={slide.id}>
           <img
-            className="imgCarousel-container bg-primary/10 border border-primary/5 object-cover"
+            className="imgCarousel-container bg-primary/10 border border-primary/5 object-cover rounded-3xl"
             src={slide.image}
             alt={`Slide ${index + 1}`}
             loading="lazy"

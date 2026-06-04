@@ -67,6 +67,7 @@ export const textSlides = [
   },
 ];
 
+// PROGRAMAS DETAILS
 export const programas = [
   {
     id: 1,
@@ -76,7 +77,8 @@ export const programas = [
       {
         id: 1,
         name: "Primeros Pasos",
-        objective: "Adaptación neuromuscular y ganancia de fuerza base.",
+        objective: "Adaptación neuromuscular y ganancia de fuerza base",
+        category: "Full-Body",
         description:
           "Enfocado en dominar los 6 movimientos fundamentales (sentadilla, press banca, peso muerto, dominada, press militar y remo) con progresiones sencillas y bajo volumen para evitar lesiones.",
         image: "/images/programs/programs1.jpg",
@@ -84,7 +86,8 @@ export const programas = [
       {
         id: 2,
         name: "Hipertrofia",
-        objective: "Estimular la hipertrofia general en todo el cuerpo.",
+        objective: "Estimular la hipertrofia general en todo el cuerpo",
+        category: "Full-Body",
         description:
           "Rutina full body 3 días/semana. Cada sesión trabaja todos los grupos musculares con ejercicios compuestos, ideal para principiantes que quieren ver los primeros cambios de tamaño muscular.",
         image: "/images/programs/programs2.jpg",
@@ -92,7 +95,8 @@ export const programas = [
       {
         id: 3,
         name: "Simetria",
-        objective: "Corregir desbalances musculares y mejorar la postura.",
+        objective: "Corregir desbalances musculares y mejorar la postura",
+        category: "Full-Body",
         description:
           "Programa especial para quienes pasan muchas horas sentados. Incluye trabajo extra para espalda alta, glúteos y rotadores externos, reduciendo el riesgo de hombros redondeados.",
         image: "/images/programs/programs3.jpg",
@@ -106,9 +110,9 @@ export const programas = [
     programs: [
       {
         id: 4,
-        name: "Espalda en V",
-        objective:
-          "Ensanchar la espalda superior para lograr la clásica forma de V.",
+        name: "Espalda V",
+        objective: "Ensanchar la espalda para lograr la clásica forma de V",
+        category: "Espalda",
         description:
           "Prioriza dominadas, jalones al pecho y remos con agarre ancho. Volumen moderado-alto con 2 días específicos de espalda a la semana.",
         image: "/images/programs/programs4.jpg",
@@ -116,7 +120,8 @@ export const programas = [
       {
         id: 5,
         name: "Tren Inferior",
-        objective: "Desarrollar piernas densas y glúteos prominentes.",
+        objective: "Desarrollar piernas densas y glúteos prominentes",
+        category: "Piernas",
         description:
           "Basado en sentadilla profunda, peso muerto rumano, prensa y bulgaras. Se usan series de 6-10 repes con sobrecarga progresiva semanal. 2 sesiones de piernas.",
         image: "/images/programs/programs5.jpg",
@@ -124,7 +129,8 @@ export const programas = [
       {
         id: 6,
         name: "Volumen",
-        objective: "Aumentar la masa muscular total mediante alto volumen.",
+        objective: "Aumentar la masa muscular mediante alto volumen",
+        category: "Full-Body",
         description:
           "Clásica división PPL 5-6 días/semana. Cada grupo se golpea 2 veces. Ideal para romper estancamientos de peso y ganar tamaño sin descuidar la intensidad.",
         image: "/images/programs/programs6.jpg",
@@ -132,8 +138,8 @@ export const programas = [
       {
         id: 7,
         name: "Fuerza",
-        objective:
-          "Combinar ganancias de fuerza absoluta con trabajo hipertrófico.",
+        objective: "Combinar ganancias de fuerza con hipertrófia",
+        category: "Full-Body",
         description:
           "4 días: 2 días pesados (3-5 repes) y 2 días de hipertrofia (8-12 repes). Perfecto para el intermedio que quiere seguir subiendo el 1RM pero sin perder el foco estético.",
         image: "/images/programs/programs7.jpg",
@@ -141,7 +147,8 @@ export const programas = [
       {
         id: 8,
         name: "Hombros 3D",
-        objective: "Desarrollar hombros redondeados y separación de deltoides.",
+        objective: "Desarrollar hombros y deltoides definidos",
+        category: "Hombros",
         description:
           "Rutina con énfasis en deltoides lateral y posterior (a menudo olvidados). Incluye elevaciones laterales, face pulls, press Arnold y mucho volumen para el deltoides lateral.",
         image: "/images/programs/programs8.jpg",
@@ -156,8 +163,8 @@ export const programas = [
       {
         id: 9,
         name: "Definicion",
-        objective:
-          "Alcanzar el máximo nivel de definición muscular con mínimo sacrificio de masa.",
+        objective: "Alcanzar definición muscular sin sacrificar masa",
+        category: "Full-Body",
         description:
           "Programa de 6 semanas con carbohidratos cíclicos y series de alto rango metabólico (12-15 repes). Incluye trabajo de pump y técnicas como rest-pause. Para competidores próximos a mostrar forma.",
         image: "/images/programs/programs9.jpg",
@@ -165,15 +172,17 @@ export const programas = [
       {
         id: 10,
         name: "Brazos",
-        objective: "Añadir centímetros a bíceps y tríceps en 8 semanas.",
+        objective: "Añadir centímetros a bíceps y tríceps en 8 semanas",
+        category: "Brazos",
         description:
           "Para avanzados con brazos rezagados. Superseries antagonistas, series descendentes y técnicas de alta intensidad como parciales, isométricos y dropsets. Volumen muy alto.",
         image: "/images/programs/programs10.jpg",
       },
       {
         id: 11,
-        name: "Madurez Muscular",
-        objective: "Mejorar la calidad, dureza y separación muscular.",
+        name: "Peak Muscular",
+        objective: "Mejorar la calidad, dureza y separación muscular",
+        category: "Full-Body",
         description:
           "Cada grupo termina con 7 series de 15 repes con descansos muy cortos (30-45”). Enfocado en la fascia. Avanzados solo, porque requiere manejo extremo de fatiga y bombeo.",
         image: "/images/programs/programs11.jpg",
@@ -181,8 +190,8 @@ export const programas = [
       {
         id: 12,
         name: "Fuerza Maxima",
-        objective:
-          "Aumentar el 1RM en sentadilla, banca y peso muerto, mientras se preserva el músculo.",
+        objective: "Aumentar el 1RM en sentadilla, banca y peso muerto",
+        category: "Full-Body",
         description:
           "Ciclos de 4 semanas (acumulación, intensificación, choque, descarga). Los levantamientos compuestos se trabajan al 85-95%, y los accesorios se mantienen en rango hipertrófico. Para avanzados con buena técnica.",
         image: "/images/programs/programs12.jpg",
@@ -191,208 +200,44 @@ export const programas = [
   },
 ];
 
-// export const programas = [
-//   {
-//     principiante: [
-//       {
-//         id: 1,
-//         name: "Primeros Pasos",
-//         objective: "Adaptación neuromuscular y ganancia de fuerza base.",
-//         description:
-//           "Enfocado en dominar los 6 movimientos fundamentales (sentadilla, press banca, peso muerto, dominada, press militar y remo) con progresiones sencillas y bajo volumen para evitar lesiones.",
-//         image: "/images/programs/programs1.jpg",
-//       },
-//       {
-//         id: 2,
-//         name: "Hipertrofia",
-//         objective: "Estimular la hipertrofia general en todo el cuerpo.",
-//         description:
-//           "Rutina full body 3 días/semana. Cada sesión trabaja todos los grupos musculares con ejercicios compuestos, ideal para principiantes que quieren ver los primeros cambios de tamaño muscular.",
-//         image: "/images/programs/programs2.jpg",
-//       },
-//       {
-//         id: 3,
-//         name: "Simetria",
-//         objective: "Corregir desbalances musculares y mejorar la postura.",
-//         description:
-//           "Programa especial para quienes pasan muchas horas sentados. Incluye trabajo extra para espalda alta, glúteos y rotadores externos, reduciendo el riesgo de hombros redondeados.",
-//         image: "/images/programs/programs3.jpg",
-//       },
-//     ],
-//     intermedio: [
-//       {
-//         id: 4,
-//         name: "Espalda en V",
-//         objective:
-//           "Ensanchar la espalda superior para lograr la clásica forma de V.",
-//         description:
-//           "Prioriza dominadas, jalones al pecho y remos con agarre ancho. Volumen moderado-alto con 2 días específicos de espalda a la semana.",
-//         image: "/images/programs/programs4.jpg",
-//       },
-//       {
-//         id: 5,
-//         name: "Tren Inferior",
-//         objective: "Desarrollar piernas densas y glúteos prominentes.",
-//         description:
-//           "Basado en sentadilla profunda, peso muerto rumano, prensa y bulgaras. Se usan series de 6-10 repes con sobrecarga progresiva semanal. 2 sesiones de piernas.",
-//         image: "/images/programs/programs5.jpg",
-//       },
-//       {
-//         id: 6,
-//         name: "Volumen",
-//         objective: "Aumentar la masa muscular total mediante alto volumen.",
-//         description:
-//           "Clásica división PPL 5-6 días/semana. Cada grupo se golpea 2 veces. Ideal para romper estancamientos de peso y ganar tamaño sin descuidar la intensidad.",
-//         image: "/images/programs/programs6.jpg",
-//       },
-//       {
-//         id: 7,
-//         name: "Fuerza",
-//         objective:
-//           "Combinar ganancias de fuerza absoluta con trabajo hipertrófico.",
-//         description:
-//           "4 días: 2 días pesados (3-5 repes) y 2 días de hipertrofia (8-12 repes). Perfecto para el intermedio que quiere seguir subiendo el 1RM pero sin perder el foco estético.",
-//         image: "/images/programs/programs7.jpg",
-//       },
-//       {
-//         id: 8,
-//         name: "Hombros 3D",
-//         objective: "Desarrollar hombros redondeados y separación de deltoides.",
-//         description:
-//           "Rutina con énfasis en deltoides lateral y posterior (a menudo olvidados). Incluye elevaciones laterales, face pulls, press Arnold y mucho volumen para el deltoides lateral.",
-//         image: "/images/programs/programs8.jpg",
-//       },
-//     ],
-//     avanzado: [
-//       {
-//         id: 9,
-//         name: "Definicion",
-//         objective:
-//           "Alcanzar el máximo nivel de definición muscular con mínimo sacrificio de masa.",
-//         description:
-//           "Programa de 6 semanas con carbohidratos cíclicos y series de alto rango metabólico (12-15 repes). Incluye trabajo de pump y técnicas como rest-pause. Para competidores próximos a mostrar forma.",
-//         image: "/images/programs/programs9.jpg",
-//       },
-//       {
-//         id: 10,
-//         name: "Brazos",
-//         objective: "Añadir centímetros a bíceps y tríceps en 8 semanas.",
-//         description:
-//           "Para avanzados con brazos rezagados. Superseries antagonistas, series descendentes y técnicas de alta intensidad como parciales, isométricos y dropsets. Volumen muy alto.",
-//         image: "/images/programs/programs10.jpg",
-//       },
-//       {
-//         id: 11,
-//         name: "Madurez Muscular",
-//         objective: "Mejorar la calidad, dureza y separación muscular.",
-//         description:
-//           "Cada grupo termina con 7 series de 15 repes con descansos muy cortos (30-45”). Enfocado en la fascia. Avanzados solo, porque requiere manejo extremo de fatiga y bombeo.",
-//         image: "/images/programs/programs11.jpg",
-//       },
-//       {
-//         id: 12,
-//         name: "Fuerza Maxima",
-//         objective:
-//           "Aumentar el 1RM en sentadilla, banca y peso muerto, mientras se preserva el músculo.",
-//         description:
-//           "Ciclos de 4 semanas (acumulación, intensificación, choque, descarga). Los levantamientos compuestos se trabajan al 85-95%, y los accesorios se mantienen en rango hipertrófico. Para avanzados con buena técnica.",
-//         image: "/images/programs/programs12.jpg",
-//       },
-//     ],
-//   },
-// ];
-
-export const projects = [
+//COUCHING PRICES
+export const coaching = [
   {
     id: 1,
-    name: "Mobile Accessories E-commerce",
-    description:
-      "An online store specializing in phone accessories including cases, chargers, cables, and power banks with MagSafe compatibility.",
-    href: "",
-    image: "/assets/projects/mobile-accessories-store.jpg",
-    bgImage: "/assets/backgrounds/blanket.jpg",
-    frameworks: [
-      { id: 1, name: "React" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "Node.js" },
-      { id: 4, name: "MongoDB" },
-      { id: 5, name: "Tailwind CSS" },
+    name: "Plan Inicial",
+    info: [
+      "• 4-day split workout plan",
+      "• Basic nutrition guide & calorie/macro targets",
+      "• Access to exercise video library",
+      "• Monthly progress tracking & check-in form",
     ],
+    price: 30,
   },
   {
     id: 2,
-    name: "Plant Shop E-commerce",
-    description:
-      "An online store specializing in rare and decorative plants with a clean, user-friendly interface.",
-    href: "",
-    image: "/assets/projects/plant-shop.jpg",
-    bgImage: "/assets/backgrounds/curtains.jpg",
-    frameworks: [
-      { id: 1, name: "React" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "Stripe API" },
-      { id: 4, name: "Tailwind CSS" },
+    name: "Plan Elite",
+    info: [
+      "• 5-day periodized training plan",
+      "• Personalized meal plan with timing suggestions",
+      "• Bi-weekly form review",
+      "• Supplement guidance for muscle gain & recovery",
+      "• Weekly group Q&A call",
     ],
+    price: 60,
+    best: true,
   },
   {
     id: 3,
-    name: "Apple Tech Marketplace",
-    description:
-      "An e-commerce platform for Apple products and accessories with deals and category filtering.",
-    href: "",
-    image: "/assets/projects/apple-tech-store.jpg",
-    bgImage: "/assets/backgrounds/map.jpg",
-    frameworks: [
-      { id: 1, name: "Blazor" },
-      { id: 2, name: "ASP.NET Core" },
-      { id: 3, name: "SQL Server" },
-      { id: 4, name: "Bootstrap" },
+    name: "Plan Premium",
+    info: [
+      "• 6-day customized split + deload protocols",
+      "• 1-on-1 weekly coaching call (30 min)",
+      "• Daily Real-time adjustments to training/diet",
+      "• Peak week & competition prep strategy",
+      "• Posing technique coaching",
+      "• Direct messaging access to coach",
     ],
-  },
-  {
-    id: 4,
-    name: "Electronics & Gadgets Store",
-    description:
-      "A multi-category online shop featuring electronics, home appliances, and gaming gear with special offers.",
-    href: "",
-    image: "/assets/projects/electronics-store.jpg",
-    bgImage: "/assets/backgrounds/poster.jpg",
-    frameworks: [
-      { id: 1, name: "Vue.js" },
-      { id: 2, name: "Laravel" },
-      { id: 3, name: "MySQL" },
-      { id: 4, name: "SCSS" },
-    ],
-  },
-  {
-    id: 5,
-    name: "Home Decor Marketplace",
-    description:
-      "A curated collection of designer home decor items, including furniture and artisan vases.",
-    href: "",
-    image: "/assets/projects/home-decor-store.jpg",
-    bgImage: "/assets/backgrounds/table.jpg",
-    frameworks: [
-      { id: 1, name: "Angular" },
-      { id: 2, name: "Firebase" },
-      { id: 3, name: "GraphQL" },
-      { id: 4, name: "Material UI" },
-    ],
-  },
-  {
-    id: 6,
-    name: "Digital Game Store",
-    description:
-      "A gaming platform featuring discounted titles, top sellers, and genre-based browsing.",
-    href: "",
-    image: "/assets/projects/game-store.jpg",
-    bgImage: "/assets/backgrounds/curtains.jpg",
-    frameworks: [
-      { id: 1, name: "Svelte" },
-      { id: 2, name: "Node.js" },
-      { id: 3, name: "MongoDB" },
-      { id: 4, name: "Chakra UI" },
-    ],
+    price: 100,
   },
 ];
 
@@ -404,5 +249,5 @@ export const socials = [
     href: "",
   },
   { name: "LinkedIn", href: "" },
-  { name: "GitHub", href: "" },
+  { name: "TikTok", href: "" },
 ];

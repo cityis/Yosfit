@@ -49,7 +49,7 @@ export const HorizontalHeader = ({ scrollTrig, h2Text, pText, spanText }) => {
         <div className="my-5 px-0 w-full flex-center flex-col | xl:flex-row xl:justify-between">
           <h2
             ref={titleRef}
-            className="programas-h1-responsive tracking-tighter"
+            className="header-big-h1-responsive leading-0 tracking-tighter"
           >
             {h2Text}
           </h2>
@@ -58,7 +58,7 @@ export const HorizontalHeader = ({ scrollTrig, h2Text, pText, spanText }) => {
             ref={subTitleRef}
             className="xl:w-1/5 xl:pr-5 text-base md:text-[21px] lg:text-2xl xl:text-[17px] 2xl:text-[20px] leading-7 text-secundary/70 font-light text-center xl:text-right"
           >
-           {"["} {pText} <span className="text-MonoRed">{spanText}</span> {"]"}
+            {"["} {pText} <span className="text-MonoRed">{spanText}</span> {"]"}
           </p>
         </div>
         <div className="mt-15 h-0.5 w-full bg-transparent overflow-hidden">

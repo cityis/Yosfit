@@ -4,31 +4,40 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 
-export const VerticalHeader = ({ scrollTrig, h2Text, pText, spanText }) => {
+export const VerticalHeader = ({
+  scrollTrig,
+  h2Text,
+  pText,
+  pHidden,
+  spanText,
+  black,
+  big,
+}) => {
   const titleRef = useRef(null);
   const subTitleRef = useRef(null);
+  const dur = 0.33;
 
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: scrollTrig,
-        start: "top 60%",
+        start: "top 40%",
       },
     });
     tl.from(titleRef.current, {
-      y: "50vh",
+      // y: "50vh",
       opacity: 0,
-      duration: 1.25,
+      duration: dur,
       ease: "circ.out",
     }).from(
       subTitleRef.current,
       {
-        y: "50vh",
+        // y: "50vh",
         opacity: 0,
-        duration: 1.25,
+        duration: dur,
         ease: "circ.out",
       },
-      "<+0.5",
+      "<+0.1",
     );
   }, [scrollTrig]);
 
@@ -39,13 +48,13 @@ export const VerticalHeader = ({ scrollTrig, h2Text, pText, spanText }) => {
     >
       <h2
         ref={titleRef}
-        className="highlights-h1-responsive text-primary text-center font-medium uppercase tracking-tighter "
+        className={`${big ? "header-big-h1-responsive" : "header-h1-responsive"} ${black ? "text-secundary" : "text-primary"}  text-center font-medium uppercase tracking-tighter`}
       >
         {h2Text}
       </h2>
       <p
         ref={subTitleRef}
-        className="text-xl md:text-3xl text-primary/60 font-light | lg:py-4"
+        className={`${pHidden ? "hidden" : "block"} text-xl md:text-3xl ${black ? "text-secundary/60" : "text-primary/60"} font-light text-center | lg:py-4`}
       >
         {pText} <span className="text-MonoRed">{spanText}</span>.
       </p>

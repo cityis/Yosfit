@@ -14,12 +14,12 @@ const ProgramasTiers = ({ scrollTrig }) => {
 
   useGSAP(() => {
     gsap.from(containerRef.current, {
-      x: -100,
+      y: "50vh",
       opacity: 0,
-      delay: 0.2,
-      duration: 2,
-      stagger: 0.1,
-      ease: "back.out",
+      delay: 0.6,
+      duration: 1.2,
+      stagger: 0.2,
+      ease: "power2.out",
       scrollTrigger: {
         trigger: scrollTrig,
       },
@@ -105,41 +105,42 @@ const ProgramasTiers = ({ scrollTrig }) => {
     );
 
     // Get the actual position of the hovered element
-  const hoveredElement = event.currentTarget;
-  const hoveredRect = hoveredElement.getBoundingClientRect();
-  const containerRect = containerRef.current[0]?.parentElement?.getBoundingClientRect();
-  
-  // Get preview dimensions
-  const previewHeight = previewRef.current?.offsetHeight || 400;
-  
-  // Calculate desired Y position (align with the hovered element)
-  let targetY = hoveredRect.top - (containerRect?.top || 0);
-  
-  // Adjust so the preview is centered vertically relative to the hovered element
-  const hoveredHeight = hoveredRect.height;
-  targetY = targetY + (hoveredHeight / 2) - (previewHeight / 2);
-  
-  // Get container height for bounds checking
-  const containerHeight = containerRect?.height || 0;
-  
-  // Bound checks - prevent going out of container
-  if (targetY < 0) {
-    targetY = 0;
-  }
-  
-  const maxY = containerHeight - previewHeight;
-  if (targetY > maxY) {
-    targetY = maxY;
-  }
-  
-  // Animate to the calculated position
-  gsap.to(previewRef.current, {
-    y: targetY,
-    opacity: 1,
-    scale: 1,
-    duration: 0.3,
-    ease: "power2.out",
-  });
+    const hoveredElement = event.currentTarget;
+    const hoveredRect = hoveredElement.getBoundingClientRect();
+    const containerRect =
+      containerRef.current[0]?.parentElement?.getBoundingClientRect();
+
+    // Get preview dimensions
+    const previewHeight = previewRef.current?.offsetHeight || 400;
+
+    // Calculate desired Y position (align with the hovered element)
+    let targetY = hoveredRect.top - (containerRect?.top || 0);
+
+    // Adjust so the preview is centered vertically relative to the hovered element
+    const hoveredHeight = hoveredRect.height;
+    targetY = targetY + hoveredHeight / 2 - previewHeight / 2;
+
+    // Get container height for bounds checking
+    const containerHeight = containerRect?.height || 0;
+
+    // Bound checks - prevent going out of container
+    if (targetY < 0) {
+      targetY = 0;
+    }
+
+    const maxY = containerHeight - previewHeight;
+    if (targetY > maxY) {
+      targetY = maxY;
+    }
+
+    // Animate to the calculated position
+    gsap.to(previewRef.current, {
+      y: targetY,
+      opacity: 1,
+      scale: 1,
+      duration: 0.3,
+      ease: "power2.out",
+    });
   };
 
   const handleMouseLeave = (index) => {
@@ -172,11 +173,13 @@ const ProgramasTiers = ({ scrollTrig }) => {
       {programas.map((tier) => (
         <div key={tier.id}>
           {/* TIER NAME */}
-          <div className="flex-center gap-2 md:justify-start">
-            <h3 className="md:ml-1 my-3 text-lg lg:text-2xl font-light italic uppercase">
+          <div className="md:mx-10 my-10  flex-center gap-2 md:justify-start">
+            <h3 className="text-lg lg:text-2xl font-light italic uppercase">
               {tier.name}
             </h3>
-            <span className="text-xs text-MonoRed">{tier.nameJap}</span>
+            <span className="text-2xl font-black md:text-base text-MonoRed">
+              {tier.nameJap}
+            </span>
           </div>
 
           {tier.programs.map((program) => (
@@ -197,23 +200,37 @@ const ProgramasTiers = ({ scrollTrig }) => {
               />
 
               <div
-                className="group my-3"
+                className="group my-4 pt-3 md:p-0 rounded-2xl overflow-hidden"
                 style={{
                   backgroundColor:
                     window.innerWidth < 768 && expandIndex === program.id
                       ? "#ec0000"
                       : "transparent",
+                  overflow:
+                    window.innerWidth < 768 && expandIndex === program.id
+                      ? "hidden"
+                      : "visible",
+                  color:
+                    window.innerWidth < 768 && expandIndex === program.id
+                      ? "#FAFAFA"
+                      : "#040404",
                 }}
               >
                 <div className="h-full">
                   {/* NOMBRE */}
-                  <span className="text-3xl lg:text-[42px] 2xl:text-[75px] font-normal uppercase tracking-tighter programas-group-hover">
-                    {program.name}
-                  </span>
+                  <div className="px-2 md:px-0 grid grid-cols-4 items-center | md:flex">
+                    <span className="col-span-3 text-[28px] lg:text-[42px] 2xl:text-[75px] font-normal tracking-tighter uppercase programas-group-hover">
+                      {program.name}
+                    </span>
+                    <span className="md:hidden justify-self-center text-sm opacity-80">
+                      {program.category}
+                    </span>
+                  </div>
+
                   {/* LINEA */}
-                  <div className="h-0.5 w-full bg-secundary group-hover:bg-primary duration-200" />
+                  <div className="h-0.5 mt-2 w-full bg-secundary/60 group-hover:bg-primary duration-200" />
                   {/* OBJETIVO */}
-                  <p className="mt-1 text-[14px] md:text-[15px] xl:text-base 2xl:text-lg text-secundary/75 programas-group-hover">
+                  <p className="hidden md:block mt-1 text-[14px] md:text-[15px] xl:text-base 2xl:text-[20px] text-secundary/75 programas-group-hover">
                     {program.objective}
                   </p>
                   {/* IMAGEN MOB */}
@@ -233,7 +250,7 @@ const ProgramasTiers = ({ scrollTrig }) => {
                       loading="lazy"
                       decoding="async"
                     />
-                    <div className="p-3 absolute bottom-10 w-[80%] text-sm text-justify text-white/90 bg-white/10 backdrop-blur-xs border border-white/10">
+                    <div className="p-3 absolute bottom-10 w-[80%] text-sm text-justify text-white/90 bg-white/10 rounded-[12px] backdrop-blur-xs border border-white/10">
                       {program.description}
                     </div>
                   </div>

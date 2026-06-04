@@ -126,7 +126,7 @@ const Navbar = () => {
             (section, index) => (
               <div key={index} ref={(el) => (linksRef.current[index] = el)}>
                 <Link
-                  className="group-hover:opacity-60 hover:opacity-100! hover:text-MonoRed! transition-all ease-in-out duration-500 cursor-pointer"
+                  className="group-hover:opacity-50 hover:opacity-100! hover:text-MonoRed! transition-all ease-in-out duration-500 cursor-pointer"
                   to={`${section}`}
                   smooth
                   offset={0}

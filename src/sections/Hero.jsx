@@ -19,20 +19,26 @@ const Hero = () => {
   Coaching online personalizado con resultados reales, enfoque profesional y seguimiento 
   constante. Empieza hoy y alcanza tu cuerpo ideal. Traza tus propias metas.`;
 
+  const del = 0.3;
+  const dur = 1.2;
+
   useGSAP(() => {
     const tl = gsap.timeline();
     tl.from(contextRef.current, {
       y: "50vh",
-      duration: 1,
-      ease: "circ.out",
+      delay: del,
+      opacity: 0,
+      duration: dur,
+      ease: "power3.Out",
     });
     tl.from(
       headerRef.current,
       {
         y: 200,
+        delay: del,
         opacity: 0,
-        duration: 1,
-        ease: "circ.out",
+        duration: dur * 1.2,
+        ease: "power3.Out",
       },
       "<+0.2",
     );
@@ -45,7 +51,7 @@ const Hero = () => {
     >
       {/* HERO BACKGROUND IMAGE */}
       <img
-        className="absolute top-0 h-full w-full object-cover opacity-50"
+        className="absolute top-0 h-full w-full object-cover opacity-60"
         src={heromob}
         // srcSet={imgSet.map(({ src, width }) => `${src} ${width}w`).join(", ")}
         // sizes="100vw"
@@ -99,7 +105,7 @@ const Hero = () => {
 
           {/*BUTTON*/}
           <div className="mt-10 flex justify-center items-center">
-            <Link to="coaching" smooth offset={0} duration={1500}>
+            <Link to="sub" smooth offset={0} duration={1500}>
               <div className="group flex items-center gap-2 start-btn uppercase cursor-pointer tracking-wide hover:tracking-[0.032em] hover:bg-MonoRed! transition-all ease-in-out duration-300">
                 <span className="text-[36px] start-hover">{"["}</span>
                 Presiona para empezar
@@ -112,7 +118,7 @@ const Hero = () => {
 
       {/* MARQUEE */}
       <div className="absolute bottom-0 w-screen z-30 overflow-hidden ">
-        <div className="bg-primary py-3 flex">
+        <div className="bg-primary py-4 flex">
           <Marquee autoFill speed={30} direction="right">
             <div className="flex items-center gap-3 mx-3 text-[16px] font-black">
               <span className="text-MonoRed text-[20px]">本文</span>
