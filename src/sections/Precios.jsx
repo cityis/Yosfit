@@ -4,6 +4,8 @@ import VerticalHeader from "../components/VerticalHeader";
 
 import { coaching } from "../constants";
 
+import { Link } from "react-scroll";
+
 const Precios = () => {
   const textHeader = "Coaching";
   const textPara = "Empieza hoy mismo con las ofertas que tenemos";
@@ -22,8 +24,8 @@ const Precios = () => {
         big={true}
       />
 
-      <div className="flex-center flex-col">
-        <div className="grid grid-cols-1 gap-6 | md:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+      <div className="flex-center flex-col 2xl:px-30">
+        <div className="grid grid-cols-1 gap-6 | md:grid-cols-2 xl:grid-cols-3 xl:gap-12">
           {coaching.map((tier) => (
             <div
               id={tier.id}
@@ -31,12 +33,13 @@ const Precios = () => {
             >
               {/* TITLE */}
               <h3
-                className={`mt-8 mx-8 h-[20%] text-2xl font-semibold leadi border-b ${tier.best ? "border-primary/60" : "border-secundary/40"} | lg:text-3xl`}
+                className={`mt-8 mx-8 h-[15%] text-2xl font-semibold leadi border-b ${tier.best ? "border-primary/60" : "border-secundary/40"} | lg:text-3xl`}
               >
                 {tier.name}
               </h3>
               {/* INFO */}
-              <ul className="mt-4 mx-8 h-[65%] text-[16px] opacity-85 | 2xl:text-[18px]">
+              <ul className="mt-4 mx-8 h-[70%] text-[16px] opacity-85 | 2xl:text-[18px]">
+                <p className="pb-5">{tier.description}</p>
                 {tier.info.map((info) => (
                   <li className="my-2">{info}</li>
                 ))}
@@ -53,12 +56,21 @@ const Precios = () => {
                 <div
                   className={`flex-center bg-MonoRed text-primary ${tier.best ? "hover:bg-primary hover:text-secundary" : "hover:bg-secundary hover:text-primary"}  cursor-pointer transition-all duration-150`}
                 >
-                  <a
+                  <Link
+                    className="text-2xl tracking-tight font-bold uppercase"
+                    smooth
+                    to="sub"
+                    offset={0}
+                    duration={500}
+                  >
+                    <p>Empezar</p>
+                  </Link>
+                  {/* <a
                     className="text-2xl tracking-tight font-bold uppercase"
                     href=""
                   >
-                    Start Now
-                  </a>
+                    Empezar
+                  </a> */}
                 </div>
               </div>
             </div>

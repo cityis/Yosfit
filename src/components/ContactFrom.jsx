@@ -14,14 +14,17 @@ const ContactForm = () => {
     e.preventDefault();
 
     if (!name || !email || !phone) {
-      setStatus({ type: "error", message: "Please fill in all fields" });
+      setStatus({
+        type: "error",
+        message: "Por favor, complete todos los campos",
+      });
       return;
     }
 
     if (!email.includes("@")) {
       setStatus({
         type: "error",
-        message: "Please enter a valid email address",
+        message: "Por favor, entre un correo válido",
       });
       return;
     }
@@ -40,7 +43,7 @@ const ContactForm = () => {
           name: name,
           email: email,
           phone: phone,
-          _subject: `New Contact Form Submission from ${name}`,
+          _subject: `${name} está interead@ en los servicios de coaching`,
           _template: "table",
         }),
       });
@@ -48,17 +51,20 @@ const ContactForm = () => {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        setStatus({ type: "success", message: "Message sent successfully!" });
+        setStatus({
+          type: "success",
+          message: "¡Información enviada exitosamente!",
+        });
         setName("");
         setEmail("");
         setPhone("");
       } else {
-        throw new Error("Failed to send");
+        throw new Error("No se pudo enviar la información");
       }
     } catch (error) {
       setStatus({
         type: "error",
-        message: "Failed to send. Please try again.",
+        message: "Envío fallido. Por favor, intente de nuevo.",
       });
     } finally {
       setIsSubmitting(false);
@@ -74,7 +80,7 @@ const ContactForm = () => {
           name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Name"
+          placeholder="Nombre"
         />
       </div>
 
@@ -96,18 +102,18 @@ const ContactForm = () => {
           name="phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          placeholder="Phone"
+          placeholder="Teléfono"
         />
       </div>
 
       <button type="submit" disabled={isSubmitting} className="mt-10 form-btn">
-        {isSubmitting ? "Sending..." : "Send"}
+        {isSubmitting ? "Enviando..." : "Enviar"}
       </button>
 
       {status.message && (
         <div
           style={{
-            color: status.type === "success" ? "green" : "red",
+            color: status.type === "success" ? "green" : "@ec0000",
             marginTop: "10px",
           }}
         >

@@ -204,38 +204,45 @@ export const programas = [
 export const coaching = [
   {
     id: 1,
-    name: "Plan Inicial",
+    name: "Esencial",
+    description:
+      "Ideal para quienes inician y quieren orientación profesional durante sus primeros pasos.",
     info: [
-      "• 4-day split workout plan",
-      "• Basic nutrition guide & calorie/macro targets",
-      "• Access to exercise video library",
-      "• Monthly progress tracking & check-in form",
+      "• Revisión semanal de progreso",
+      "• Soporte vía WhatsApp",
+      "• Contacto semanal con tu coach",
+      "• Acceso a tips de alimentación",
+      "• Recomendaciones de entrenamiento general",
     ],
     price: 30,
   },
   {
     id: 2,
-    name: "Plan Elite",
+    name: "Progreso Total",
+    description:
+      "Diseñado para quienes buscan mejorar su físico con enfoque estratégico.",
     info: [
-      "• 5-day periodized training plan",
-      "• Personalized meal plan with timing suggestions",
-      "• Bi-weekly form review",
-      "• Supplement guidance for muscle gain & recovery",
-      "• Weekly group Q&A call",
+      "• Todo lo inlucido en el Plan Esencial",
+      "• Rutina personalizada según tu meta",
+      "• Plan de alimentación adaptado",
+      "• Revisión semanal detallada por videollamada",
+      "• Acceso a grupo privado exclusivo",
     ],
+
     price: 60,
     best: true,
   },
   {
     id: 3,
-    name: "Plan Premium",
+    name: "Escenario YosFit",
+    description:
+      "Coaching avanzado para atletas y competidores que buscan alcanzar el máximo nivel.",
     info: [
-      "• 6-day customized split + deload protocols",
-      "• 1-on-1 weekly coaching call (30 min)",
-      "• Daily Real-time adjustments to training/diet",
-      "• Peak week & competition prep strategy",
-      "• Posing technique coaching",
-      "• Direct messaging access to coach",
+      "• Todo lo inlucido en el Plan Progreso Total",
+      "• Preparación completa para tarima",
+      "• Ajustes semanales para competición",
+      "• Acceso prioritario y contacto directo con YosFit",
+      "• Apoyo en posing y estrategia para escenario",
     ],
     price: 100,
   },

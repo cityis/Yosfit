@@ -6,6 +6,8 @@ import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
+import { Link } from "react-scroll";
+
 const Programas = () => {
   const textHeader = "Programas";
   const textPara =
@@ -146,9 +148,15 @@ const Programas = () => {
                   />
                   {/* TITLE */}
                   <div className="px-1 flex justify-between items-center transition-all duration-600 | md:group-hover:px-6 md:group-hover:text-primary">
-                    <h2 className="text-[24px] font-normal tracking-tight leading-none uppercase | sm:text-[36px] md:text-[40px] xl:text-[48px]">
+                    <Link
+                      className="w-full h-full text-[24px] font-normal tracking-tight leading-none uppercase | sm:text-[36px] md:text-[40px] xl:text-[48px]"
+                      to="sub"
+                      smooth
+                      offset={0}
+                      duration={1500}
+                    >
                       {program.name}
-                    </h2>
+                    </Link>
                     <p className="md:hidden text-MonoRed | sm:text-lg">
                       {program.category}
                     </p>

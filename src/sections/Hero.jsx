@@ -90,15 +90,15 @@ const Hero = () => {
           {/* ABOUT */}
           <div className="banner-text-responsive italic tracking-wide text-white/80 group">
             <p className="banner-text-animation text-left">
-              ENTRENA
+              TRANSFORMA
               <span className="text-MonoRed ml-1">.</span>
             </p>
             <p className="banner-text-animation text-center">
-              CRECE
+              MEJORA
               <span className="text-MonoRed ml-1">.</span>
             </p>
             <p className="banner-text-animation text-right">
-              LOGRA
+              CONQUISTA
               <span className="text-MonoRed ml-1">.</span>
             </p>
           </div>

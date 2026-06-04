@@ -5,6 +5,7 @@ import Reviews from "./sections/Reviews";
 import Programas from "./sections/Programas";
 import Precios from "./sections/Precios";
 import Sub from "./sections/Sub";
+import Footer from "./sections/Footer";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -25,6 +26,7 @@ const App = () => {
       <Programas />
       <Precios />
       <Sub />
+      <Footer />
     </ReactLenis>
   );
 };
