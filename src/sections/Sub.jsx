@@ -14,7 +14,7 @@ const Sub = () => {
     >
       <div className="h-full flex-center flex-col gap-12">
         <h2 className="z-50 header-big-h1-responsive text-primary text-center font-bold italic uppercase tracking-wide">
-          ¡Empieza hoy!
+          Comienza hoy
         </h2>
 
         <div className="p-4 bg-secundary/10 backdrop-blur-[2px]">

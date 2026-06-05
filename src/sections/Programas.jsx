@@ -157,7 +157,7 @@ const Programas = () => {
                     >
                       {program.name}
                     </Link>
-                    <p className="md:hidden text-MonoRed | sm:text-lg">
+                    <p className="md:hidden  text-MonoRed | sm:text-lg">
                       {program.category}
                     </p>
                   </div>

@@ -13,7 +13,7 @@ const Reviews = () => {
   return (
     <section
       id="reviews"
-      className="w-screen h-full common-padding pt-0 sm:px-50 overflow-hidden bg-secundary"
+      className="w-screen h-full common-padding pt-0 overflow-hidden bg-secundary | md:px-20"
     >
       <div className="w-full screen-max-width">
         <VerticalHeader

@@ -14,6 +14,8 @@ gsap.registerPlugin(ScrollTrigger);
 import ReactLenis from "lenis/react";
 
 const App = () => {
+  // const { progress } = useProgress();
+
   return (
     <ReactLenis
       root

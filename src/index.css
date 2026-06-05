@@ -235,7 +235,7 @@ body {
 }
 
 @utility banner-text-responsive {
-  @apply w-2/3 sm:w-200 flex flex-col sm:flex-row sm:justify-between text-[26px] sm:text-[30px] md:text-[32px];
+  @apply w-2/3 sm:w-150 md:w-180 lg:w-210 flex flex-col sm:flex-row sm:justify-between text-[26px] sm:text-[30px] md:text-[32px];
 }
 
 @utility banner-text-animation {
@@ -283,7 +283,7 @@ body {
 }
 
 @utility programas-desktopImage-responsive {
-  @apply aspect-2/3 -top-3/9 left-20 w-75 lg:left-40 lg:w-100 2xl:left-60 2xl:w-120;
+  @apply aspect-2/3 -top-3/9 left-20 w-75 lg:left-40 lg:w-100 2xl:left-60 2xl:w-105;
 }
 
 @utility input-container {

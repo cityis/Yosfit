@@ -78,7 +78,7 @@ export const programas = [
         id: 1,
         name: "Primeros Pasos",
         objective: "Adaptación neuromuscular y ganancia de fuerza base",
-        category: "Full-Body",
+        category: "Body",
         description:
           "Enfocado en dominar los 6 movimientos fundamentales (sentadilla, press banca, peso muerto, dominada, press militar y remo) con progresiones sencillas y bajo volumen para evitar lesiones.",
         image: "/images/programs/programs1.jpg",
@@ -87,7 +87,7 @@ export const programas = [
         id: 2,
         name: "Hipertrofia",
         objective: "Estimular la hipertrofia general en todo el cuerpo",
-        category: "Full-Body",
+        category: "Body",
         description:
           "Rutina full body 3 días/semana. Cada sesión trabaja todos los grupos musculares con ejercicios compuestos, ideal para principiantes que quieren ver los primeros cambios de tamaño muscular.",
         image: "/images/programs/programs2.jpg",
@@ -96,7 +96,7 @@ export const programas = [
         id: 3,
         name: "Simetria",
         objective: "Corregir desbalances musculares y mejorar la postura",
-        category: "Full-Body",
+        category: "Body",
         description:
           "Programa especial para quienes pasan muchas horas sentados. Incluye trabajo extra para espalda alta, glúteos y rotadores externos, reduciendo el riesgo de hombros redondeados.",
         image: "/images/programs/programs3.jpg",
@@ -130,7 +130,7 @@ export const programas = [
         id: 6,
         name: "Volumen",
         objective: "Aumentar la masa muscular mediante alto volumen",
-        category: "Full-Body",
+        category: "Body",
         description:
           "Clásica división PPL 5-6 días/semana. Cada grupo se golpea 2 veces. Ideal para romper estancamientos de peso y ganar tamaño sin descuidar la intensidad.",
         image: "/images/programs/programs6.jpg",
@@ -139,7 +139,7 @@ export const programas = [
         id: 7,
         name: "Fuerza",
         objective: "Combinar ganancias de fuerza con hipertrófia",
-        category: "Full-Body",
+        category: "Body",
         description:
           "4 días: 2 días pesados (3-5 repes) y 2 días de hipertrofia (8-12 repes). Perfecto para el intermedio que quiere seguir subiendo el 1RM pero sin perder el foco estético.",
         image: "/images/programs/programs7.jpg",
@@ -164,7 +164,7 @@ export const programas = [
         id: 9,
         name: "Definicion",
         objective: "Alcanzar definición muscular sin sacrificar masa",
-        category: "Full-Body",
+        category: "Body",
         description:
           "Programa de 6 semanas con carbohidratos cíclicos y series de alto rango metabólico (12-15 repes). Incluye trabajo de pump y técnicas como rest-pause. Para competidores próximos a mostrar forma.",
         image: "/images/programs/programs9.jpg",
@@ -182,7 +182,7 @@ export const programas = [
         id: 11,
         name: "Peak Muscular",
         objective: "Mejorar la calidad, dureza y separación muscular",
-        category: "Full-Body",
+        category: "Body",
         description:
           "Cada grupo termina con 7 series de 15 repes con descansos muy cortos (30-45”). Enfocado en la fascia. Avanzados solo, porque requiere manejo extremo de fatiga y bombeo.",
         image: "/images/programs/programs11.jpg",
@@ -191,7 +191,7 @@ export const programas = [
         id: 12,
         name: "Fuerza Maxima",
         objective: "Aumentar el 1RM en sentadilla, banca y peso muerto",
-        category: "Full-Body",
+        category: "Body",
         description:
           "Ciclos de 4 semanas (acumulación, intensificación, choque, descarga). Los levantamientos compuestos se trabajan al 85-95%, y los accesorios se mantienen en rango hipertrófico. Para avanzados con buena técnica.",
         image: "/images/programs/programs12.jpg",
@@ -236,7 +236,7 @@ export const coaching = [
     id: 3,
     name: "Escenario YosFit",
     description:
-      "Coaching avanzado para atletas y competidores que buscan alcanzar el máximo nivel.",
+      "Coaching avanzado para atletas que buscan alcanzar el máximo nivel.",
     info: [
       "• Todo lo inlucido en el Plan Progreso Total",
       "• Preparación completa para tarima",
