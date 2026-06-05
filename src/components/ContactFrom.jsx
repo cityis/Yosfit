@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // CHANGE THIS TO YOUR EMAIL ADDRESS
-const YOUR_EMAIL = "waldin.kano@gmail.com";
+const YOUR_EMAIL = "yoslovacoaching@gmail.com";
 
 const ContactForm = () => {
   const [name, setName] = useState("");

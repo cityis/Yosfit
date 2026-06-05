@@ -250,11 +250,7 @@ export const coaching = [
 
 // SOCIAL MEDIA LINKS
 export const socials = [
-  { name: "Instagram", href: "" },
-  {
-    name: "Youtube",
-    href: "",
-  },
-  { name: "LinkedIn", href: "" },
   { name: "TikTok", href: "" },
+  { name: "Instagram", href: "" },
+  { name: "Facebook", href: "" },
 ];

@@ -1,3 +1,5 @@
+import { socials } from "../constants";
+
 import React from "react";
 
 import { Link } from "react-scroll";
@@ -53,7 +55,16 @@ const Footer = () => {
           <div className="h-full flex flex-col">
             <div className="h-1/4 flex items-center justify-between uppercase border-b border-primary/25">
               <div className="w-full h-full flex items-center justify-evenly">
-                <a
+                {socials.map((social, id) => (
+                  <a
+                    className={`w-1/3 h-1/4 flex-center ${social.name === "Instagram" ? "border-l border-r border-primary/25" : ""} hover:opacity-75 duration-150 transition-all ease-in-out`}
+                    key={id}
+                    href={social.href}
+                  >
+                    {social.name}
+                  </a>
+                ))}
+                {/* <a
                   href=""
                   className="hover:opacity-75 duration-150 transition-all ease-in-out"
                 >
@@ -72,7 +83,7 @@ const Footer = () => {
                   className="hover:opacity-75 duration-150 transition-all ease-in-out"
                 >
                   Facebook
-                </a>
+                </a> */}
               </div>
 
               <div className="w-1/4 h-full bg-MonoRed hover:saturate-80">
